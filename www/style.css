@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #0a6cff;
+  color: white;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 1.2rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+h2 {
+  margin-left: 0.5rem;
+  color: #222;
+  border-left: 5px solid #0a6cff;
+  padding-left: 0.5rem;
+}
+
+.categoria {
+  margin: 2rem 0;
+}
+
+.carrusel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  min-width: 250px;
+  flex: 0 0 auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.card .info {
+  padding: 0.8rem 1rem;
+}
+
+.card .info h3 {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+.card .info p {
+  margin: 0.2rem 0;
+  color: #666;
+}
+
+footer {
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+  .card {
+    min-width: 200px;
+  }
+}

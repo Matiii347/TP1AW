@@ -1,0 +1,17 @@
+{
+  "name": "tp1-aws2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch app.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "5.1.0",
+    "pg": "^8.16.3"
+  }
+}
