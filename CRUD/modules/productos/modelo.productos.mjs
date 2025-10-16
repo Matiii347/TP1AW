@@ -39,8 +39,7 @@ Modificar,eliminar
 export async function modificarProducto(id, datos) {
     const { marca, modelo, año, precio, categoria, imagen } = datos;
 
-    // 1. La consulta SQL para actualizar. Usamos $1, $2, etc. para los valores
-    //    y $7 para el ID en la cláusula WHERE.
+    // 1. La consulta SQL para actualizar. 
     const consulta = `
         UPDATE autos 
         SET marca = $1, modelo = $2, año = $3, precio = $4, categoria = $5, imagen = $6 
