@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Funes Motors</title>
+  <link rel="stylesheet" href="../www/style.css">
+</head>
+<body>
+  <header>
+    <h1>Panel de Administración 🛠️</h1>
+    <nav>
+        <a href="/" class="nav-link">Ver Catálogo Público</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="vista-admin">
+      <div class="admin-seccion">
+        <h2>✅ Dar de Alta un Auto Nuevo</h2>
+        <form id="form-alta">
+            <input type="text" name="marca" placeholder="Marca" required>
+            <input type="text" name="modelo" placeholder="Modelo" required>
+            <input type="number" name="año" placeholder="Año" required>
+            <input type="number" name="precio" placeholder="Precio" required>
+            <select name="categoria" required>
+                <option value="">Seleccione Categoría</option>
+                <option value="hatchback">Hatchback</option>
+                <option value="utilitario">Utilitario</option>
+                <option value="deportivo">Deportivo</option>
+            </select>
+            <input type="text" name="imagen" placeholder="URL de la Imagen">
+            <button type="submit">Guardar Auto</button>
+        </form>
+      </div>
+      
+      <div class="admin-seccion">
+        <h2>✏️ Modificar un Auto</h2>
+        <form id="form-buscar-modificar">
+            <input type="number" id="id-buscar-modificar" placeholder="Ingrese ID del auto a modificar" required>
+            <button type="submit">Buscar</button>
+        </form>
+        <form id="form-modificar" class="hidden"></form>
+      </div>
+
+      <div class="admin-seccion">
+        <h2>❌ Dar de Baja un Auto</h2>
+        <form id="form-buscar-baja">
+            <input type="number" id="id-buscar-baja" placeholder="Ingrese ID del auto a eliminar" required>
+            <button type="submit">Buscar</button>
+        </form>
+        <div id="info-baja" class="hidden"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="admin.mjs"></script>
+</body>
+</html>
