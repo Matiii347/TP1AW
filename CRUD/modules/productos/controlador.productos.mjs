@@ -23,6 +23,18 @@ export async function altaProducto(req, res) {
     }
 }
 
-export async function modificarProducto(params) {
-    
+export async function modificarProducto(req, res) {
+    const { id } = req.params
+    const datosModificados = req.body
+    if (!req.body || !req.body.marca || !req.body.modelo) {
+        return res.status(400).json({ mensaje: "Datos Incompletos" })
+    }
+    try {
+        const modificarProducto = await modelo.modificarProducto(id, datosModificados)
+        console.log(datosModificados)
+        res.status(200).json(modificarProducto)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ mensaje: "Hubo un error en el servidor" })
+    }
 }
