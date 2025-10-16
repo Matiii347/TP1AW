@@ -25,7 +25,7 @@ export async function altaProducto(datos) {
         const { marca, modelo, anio, precio, categoria, imagen } = datos;
         // La consulta y los valores se pasan como dos argumentos separados por una coma
         const resultado = await pool.query(
-            "INSERT INTO autos(marca, modelo, año, precio, categoria, imagen) VALUES($1, $2, $3, $4, $5, $6) RETURNING id",
+            "INSERT INTO autos(marca, modelo, anio, precio, categoria, imagen) VALUES($1, $2, $3, $4, $5, $6) RETURNING id",
             [marca, modelo, anio, precio, categoria, imagen] // <-- El array ahora está dentro
         );
         return resultado.rows;
