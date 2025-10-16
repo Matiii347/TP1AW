@@ -38,13 +38,13 @@ formBuscarModificar.addEventListener('submit', async (e) => {
         const respuesta = await fetch(API_URL);
         const autos = await respuesta.json();
         const auto = autos.find(a => a.id == id);
-        
+
         if (auto) {
             formModificar.innerHTML = `
                 <input type="hidden" name="id" value="${auto.id}">
                 <input type="text" name="marca" value="${auto.marca}" required>
                 <input type="text" name="modelo" value="${auto.modelo}" required>
-                <input type="number" name="año" value="${auto.año}" required>
+                <input type="number" name="anio" value="${auto.anio}" required>
                 <input type="number" name="precio" value="${auto.precio}" required>
                 <select name="categoria" required>
                     <option value="hatchback" ${auto.categoria === 'hatchback' ? 'selected' : ''}>Hatchback</option>
@@ -109,7 +109,7 @@ formBuscarBaja.addEventListener('submit', async (e) => {
                 <button id="btn-confirmar-baja" data-id="${auto.id}">Confirmar Eliminación</button>
             `;
             infoBaja.classList.remove('hidden');
-            
+
             document.getElementById('btn-confirmar-baja').addEventListener('click', async (e) => {
                 const idParaBorrar = e.target.dataset.id;
                 try {

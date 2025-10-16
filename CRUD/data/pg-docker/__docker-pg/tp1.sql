@@ -9,14 +9,14 @@ CREATE TABLE autos (
     id SERIAL PRIMARY KEY,
     marca VARCHAR(50) NOT NULL,
     modelo VARCHAR(50) NOT NULL,
-    año INT CHECK (año >= 1900 AND año <= 2100),
+    anio INT CHECK (anio >= 1900 AND anio <= 2100),
     precio NUMERIC(12,2) CHECK (precio > 0),
     categoria VARCHAR(20) CHECK (categoria IN ('hatchback', 'utilitario', 'deportivo')),
     imagen TEXT
 );
 
 -- Insertar autos en la tabla
-INSERT INTO autos (marca, modelo, año, precio, categoria, imagen) VALUES
+INSERT INTO autos (marca, modelo, anio, precio, categoria, imagen) VALUES
 ('Toyota', 'Yaris', 2022, 8500000.00, 'hatchback', 'https://example.com/yaris.jpg'),
 ('Ford', 'Fiesta', 2019, 7200000.00, 'utilitario', 'https://example.com/fiesta.jpg'),
 ('Chevrolet', 'Onix', 2021, 7900000.00, 'hatchback', 'https://example.com/onix.jpg'),
