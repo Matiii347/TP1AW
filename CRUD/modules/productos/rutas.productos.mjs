@@ -1,7 +1,7 @@
 // Enrutamiento de los endpoints
 import express from 'express'
 import * as controlador from './controlador.productos.mjs'
-import { chequearDatosProductos } from './utils.mjs'
+//import { chequearDatosProductos } from './utils.mjs'
 
 // Ruta base
 const RUTA_BASE = '/api/autos'
@@ -13,11 +13,12 @@ rutasProductos.get(RUTA_BASE, controlador.ObtenerProductos)
 // Traer 1
 //rutasProductos.get(RUTA_BASE + '/:id', controlador.ObtenerProductos)
 // Agregar 1
-//rutasProductos.post(RUTA_BASE, chequearDatosProductos, controlador.altaProducto)
+rutasProductos.post(RUTA_BASE, controlador.altaProducto)
 // Modificar 1
-//rutasProductos.put(RUTA_BASE + '/:id', controlador.modificarProducto)
+rutasProductos.put(RUTA_BASE + '/:id', controlador.modificarProducto)
 // Elimiar 1
 //rutasProductos.delete(RUTA_BASE + '/:id', controlador.eliminarProducto)
 
 export default rutasProductos
+
 
