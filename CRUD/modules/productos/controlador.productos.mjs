@@ -33,7 +33,7 @@ export async function modificarProducto(req, res) {
 
     try {
         const autoModificado = await modelo.modificarProducto(id, datosModificados);
-        
+
         if (!autoModificado) {
             return res.status(404).json({ mensaje: "Auto no encontrado." });
         }
@@ -41,6 +41,22 @@ export async function modificarProducto(req, res) {
         res.status(200).json(autoModificado);
     } catch (error) {
         console.error("❌ ERROR AL MODIFICAR EL AUTO:", error);
+        res.status(500).json({ mensaje: "Hubo un error en el servidor" });
+    }
+}
+
+export async function eliminarProducto(req, res) {
+    const { id } = req.params
+    try {
+        const eliminarAuto = await modelo.eliminarAuto(id);
+
+        if (eliminarAuto === 0) {
+            return res.status(404).json({ mensaje: "Auto no encontrado para eliminar." });
+        }
+
+        res.status(204).send()
+    } catch (error) {
+        console.error("❌ ERROR AL Eliminar EL AUTO:", error);
         res.status(500).json({ mensaje: "Hubo un error en el servidor" });
     }
 }

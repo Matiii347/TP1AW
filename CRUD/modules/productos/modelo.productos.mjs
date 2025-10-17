@@ -39,3 +39,15 @@ export async function modificarProducto(id, datos) {
         throw error;
     }
 }
+
+export async function eliminarProducto(id) {
+
+    const consulta = 'DELETE FROM autos WHERE id = $1';
+    try {
+        const resultado = await pool.query(consulta, [id]);
+        // Devolvemos el número de filas afectadas (rowCount). Debería ser 1 si se borró, 0 si no se encontró.
+        return resultado.rowCount;
+    } catch (error) {
+        throw error;
+    }
+}

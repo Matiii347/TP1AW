@@ -17,7 +17,7 @@ rutasProductos.post(RUTA_BASE, controlador.altaProducto)
 // Modificar 1
 rutasProductos.put(RUTA_BASE + '/:id', controlador.modificarProducto)
 // Elimiar 1
-//rutasProductos.delete(RUTA_BASE + '/:id', controlador.eliminarProducto)
+rutasProductos.delete(RUTA_BASE + '/:id', controlador.eliminarProducto)
 
 export default rutasProductos
 
