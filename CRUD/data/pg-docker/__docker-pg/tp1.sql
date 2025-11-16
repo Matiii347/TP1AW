@@ -25,3 +25,10 @@ INSERT INTO autos (marca, modelo, anio, precio, categoria, imagen) VALUES
 ('Peugeot', '208 GT', 2022, 10500000.00, 'deportivo', 'https://example.com/208gt.jpg'),
 ('Fiat', 'Argo', 2021, 7400000.00, 'hatchback', 'https://example.com/argo.jpg'),
 ('Honda', 'Fit', 2020, 8000000.00, 'utilitario', 'https://example.com/fit.jpg');
+
+-- Crear la tabla de usuarios
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL -- La contraseña debe ser larga para guardar el hash
+);
