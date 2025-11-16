@@ -10,4 +10,4 @@ app.use(cookieParser())
 app.use(rutasProductos)
 app.use(express.static('./www'))
 //Servir el panel de administración en la ruta /admin
-app.use('/login', verificarToken, express.static('./CRUD/www-admin'))
+app.use('/panel', express.static('./CRUD/www-admin'))

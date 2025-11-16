@@ -11,6 +11,17 @@ export async function registro(req, res) {
         const passHash = await bcrypt.hash(password, 10);
         const usuarioNuevo = await modelo.crearUsuario(username, passHash)
 
+        const token = jwt.sign(
+            { id: usuarioNuevo.id, username: usuarioNuevo.username },
+            process.env.JWT_SECRET,
+            { expiresIn: '1h' }
+        )
+        res.cookie('token', token, {
+            httpOnly: true,
+            secure: false,
+            sameSite: 'strict'
+        })
+
         res.status(201).json({ id: usuarioNuevo.id, username: usuarioNuevo.username });
     } catch (error) {
         console.error("❌ ERROR AL CREAR EL Usuario:", error);
