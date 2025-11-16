@@ -7,3 +7,5 @@ const rutaAuth = new express.Router()
 rutaAuth.post(RUTA_BASE_REGISTRO, control.registro)
 
 rutaAuth.post(RUTA_BASE_LOGIN, control.registroLogin)
+
+export default rutaAuth

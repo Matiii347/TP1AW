@@ -6,7 +6,7 @@ formRegistro.addEventListener('submit', async (event) => {
 
     const username = document.getElementById('username').value
     const password = document.getElementById('password').value
-    const passwordConfirm = document.getElementById('passwordConfirm').value
+    const passwordConfirm = document.getElementById('password_confirm').value
 
     if (password !== passwordConfirm) {
         alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.')
@@ -20,7 +20,7 @@ formRegistro.addEventListener('submit', async (event) => {
         });
         if (respuesta.ok) {
             alert('¡Usuario registrado con éxito! Ahora puedes iniciar sesión.')
-            window.location.href = '/admin/'
+            window.location.href = '/panel/'
         } else {
             const error = await respuesta.json()
             alert(`Error al registrar: ${error.mensaje}`)

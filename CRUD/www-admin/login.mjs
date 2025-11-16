@@ -14,7 +14,7 @@ formLogin.addEventListener('submit', async (event) => {
         })
         if (respuesta.ok) {
             alert('¡Bienvenido!')
-            window.location.href = '/admin/panel.html'
+            window.location.href = '/panel/panel.html'
         } else {
             const error = await respuesta.json()
             alert(`Error: ${error.mensaje}`)
